@@ -1,5 +1,9 @@
 import { Router } from "express";
-import { getAllUsers } from "../controller/user.controller.js";
+import { getAllUsers, getMessages } from "../controller/user.controller.js";
+import { protectRoute } from "../middleware/auth.middleware.js";
+
 const router = Router();
 router.get("/", getAllUsers);
+router.get("/messages/:userId", protectRoute, getMessages);
+
 export default router;

@@ -28,5 +28,5 @@ export const AudioPlayer = () => {
       if (isPlaying) audio.play();
     }
   }, [currentSong, isPlaying]);
-  return <div>AudioPlayer</div>;
+  return <audio ref={audioRef} />;
 };
